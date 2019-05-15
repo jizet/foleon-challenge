@@ -10,11 +10,9 @@ const setup = createStore()
 class App extends Component {
   render () {
     return (
-      // <Provider store={setup.store}>
-      <div>
+      <Provider store={setup.store}>
         <Main />
-      </div>
-      // </Provider>
+      </Provider>
     )
   }
 }
