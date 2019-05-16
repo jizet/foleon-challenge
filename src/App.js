@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
-import createStore from './redux'
+import createStore from './reducers'
 import Main from './components/Main'
 import './styles/App.css'
 

@@ -36,8 +36,10 @@
     "react-hot-loader": "^4.8.4",
     "react-redux": "^7.0.2",
     "redux": "^4.0.1",
-    "redux-saga": "^1.0.2",
+    "redux-observable": "^1.1.0",
     "reduxsauce": "^1.1.0",
+    "rxjs": "^6.5.2",
+    "rxjs-compat": "^6.5.2",
     "styled-components": "^4.2.0"
   }
 }
