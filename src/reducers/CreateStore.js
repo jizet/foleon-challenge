@@ -4,7 +4,6 @@ import { createLogger } from 'redux-logger'
 
 export default (rootReducer, rootEpic) => {
   /* ------------- Redux Configuration ------------- */
-
   const middleware = []
   const enhancers = []
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -23,6 +22,8 @@ export default (rootReducer, rootEpic) => {
   enhancers.push(applyMiddleware(...middleware))
 
   const store = createStore(rootReducer, composeEnhancers(...enhancers))
+
+  epicMiddleware.run(rootEpic)
 
   return {store}
 }
