@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
 import { createLogger } from 'redux-logger'
+import { ajax } from 'rxjs/ajax';
 
 export default (rootReducer, rootEpic) => {
   /* ------------- Redux Configuration ------------- */
@@ -9,7 +10,9 @@ export default (rootReducer, rootEpic) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   /* ------------- RxJS Middleware ------------- */
-  const epicMiddleware = createEpicMiddleware(rootEpic)
+  const epicMiddleware = createEpicMiddleware({
+    dependencies: { getJSON: ajax.getJSON }
+  })
   middleware.push(epicMiddleware)
 
   /* ------------- Logger Middleware ------------- */

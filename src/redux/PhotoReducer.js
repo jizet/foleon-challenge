@@ -21,6 +21,7 @@ export const reducer = (state = initialState, action) => {
     
       case PHOTOS_SEARCH_SUCCESS:
         return {
+          ...state,
           photos: [...action.payload],
           loading: false,
           error: null

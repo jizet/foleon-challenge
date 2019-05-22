@@ -1,4 +1,4 @@
 import { combineEpics } from 'redux-observable'
-import { fetchSearchPhotos } from './searchEpic'
+import { fetchSearchPhotos } from './SearchEpic'
 
-export default rootEpic = combineEpics(fetchSearchPhotos);
+export const rootEpic = combineEpics(fetchSearchPhotos);
